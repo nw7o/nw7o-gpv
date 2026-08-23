@@ -1,1 +1,136 @@
+/* NW7O - Gamepad Viewer Custom Skin */
 
+.ds4 {
+  position: relative !important;
+  background-color: #050505 !important;
+  color: #fff !important;
+}
+
+/* Touchpad */
+.ds4 .touchpad {
+  background: #050505 !important;
+  border: 2px solid #fff !important;
+  box-shadow:
+    inset 0 0 0 2px #111,
+    0 0 0 1px #000 !important;
+}
+
+.ds4 .touchpad::after {
+  content: "nw7o";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(-4deg);
+
+  text-shadow: 2px 2px 0 #000;
+  pointer-events: none;
+}
+
+/* ABXY */
+.ds4 .abxy .button {
+  background: #080808 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+  box-shadow:
+    inset 0 0 0 1px #222,
+    0 2px 5px #000 !important;
+}
+
+.ds4 .abxy .button.active {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* D-PAD */
+.ds4 .dpad .face {
+  background: #080808 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.ds4 .dpad .face.active {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* STICKS */
+.ds4 .sticks .stick {
+  background: #080808 !important;
+  border-color: #fff !important;
+  box-shadow:
+    inset 0 0 0 2px #181818,
+    0 2px 5px #000 !important;
+}
+
+/* L1/R1 */
+.ds4 .bumpers > * {
+  filter: grayscale(1) brightness(1.4) !important;
+}
+
+/* L2/R2 */
+.ds4 .triggers > * {
+  filter: grayscale(1) brightness(1.4) !important;
+}
+
+/* Center */
+.ds4 .meta,
+.ds4 .quadrant {
+  filter: grayscale(1) brightness(1.4) !important;
+}
+
+/* White paint splatters */
+.ds4::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+
+  background:
+    radial-gradient(circle at 12% 22%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 18% 30%, #fff 0 7px, transparent 8px),
+    radial-gradient(circle at 25% 17%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 33% 35%, #fff 0 5px, transparent 6px),
+    radial-gradient(circle at 43% 22%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 56% 29%, #fff 0 6px, transparent 7px),
+    radial-gradient(circle at 68% 18%, #fff 0 4px, transparent 5px),
+    radial-gradient(circle at 77% 31%, #fff 0 7px, transparent 8px),
+    radial-gradient(circle at 87% 21%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 20% 67%, #fff 0 5px, transparent 6px),
+    radial-gradient(circle at 35% 76%, #fff 0 3px, transparent 4px),
+    radial-gradient(circle at 52% 70%, #fff 0 6px, transparent 7px),
+    radial-gradient(circle at 72% 73%, #fff 0 4px, transparent 5px),
+    radial-gradient(circle at 88% 66%, #fff 0 6px, transparent 7px);
+
+  opacity: .8;
+  pointer-events: none;
+}
+
+/* Keep controls clickable */
+.ds4 .triggers,
+.ds4 .bumpers,
+.ds4 .touchpad,
+.ds4 .abxy,
+.ds4 .sticks,
+.ds4 .dpad,
+.ds4 .meta,
+.ds4 .quadrant {
+  z-index: 30;
+}
+
+/* Transparent outside */
+html,
+body {
+  background: transparent !important;
+}
